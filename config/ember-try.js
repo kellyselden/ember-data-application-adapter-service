@@ -4,7 +4,12 @@ module.exports = {
     {
       name: 'default',
       bower: {
-        dependencies: { }
+        dependencies: {
+          'ember': '^1.0.0'
+        },
+        resolutions: {
+          'ember': '^1.0.0'
+        }
       }
     },
     {

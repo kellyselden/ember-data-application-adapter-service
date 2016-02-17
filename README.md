@@ -1,4 +1,5 @@
 # Ember-data-application-adapter-service
+[![Build Status](https://travis-ci.org/kellyselden/ember-data-application-adapter-service.svg?branch=master)](https://travis-ci.org/kellyselden/ember-data-application-adapter-service)
 
 This README outlines the details of collaborating on this Ember addon.
 

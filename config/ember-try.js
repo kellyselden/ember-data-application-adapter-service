@@ -4,11 +4,17 @@ module.exports = {
     {
       name: 'default',
       bower: {
+        dependencies: { }
+      }
+    },
+    {
+      name: 'ember-1.13',
+      bower: {
         dependencies: {
-          'ember': '^1.0.0'
+          'ember': '~1.13.0'
         },
         resolutions: {
-          'ember': '^1.0.0'
+          'ember': '~1.13.0'
         }
       }
     },

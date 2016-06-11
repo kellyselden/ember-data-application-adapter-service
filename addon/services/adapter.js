@@ -17,12 +17,13 @@ export default Service.extend({
   ajax(url) {
     let adapter = get(this, '_adapter');
 
-    let {
-      host,
-      namespace
-    } = adapter;
+    let shouldIgnore = url.match(/^https?:\/\//);
+    if (!shouldIgnore) {
+      let host = get(adapter, 'host');
+      let namespace = get(adapter, 'namespace');
 
-    url = `${host}/${namespace}/${url}`;
+      url = `${host}/${namespace}/${url}`;
+    }
 
     let params = Array.prototype.slice.call(arguments).slice(1);
 

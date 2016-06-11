@@ -27,7 +27,7 @@ moduleFor('service:adapter', 'Unit | Service | adapter', {
 });
 
 test('grabs application adapter', function(assert) {
-  return service.ajax().then(() => {
+  return service.ajax('test-url').then(() => {
     assert.deepEqual(adapterForStub.args, [['application']]);
   });
 });
@@ -44,8 +44,20 @@ test('calls adapter.ajax with remaining params', function(assert) {
   });
 });
 
+test('skips the logic if starts with http://', function(assert) {
+  return service.ajax('http://test-url').then(() => {
+    assert.deepEqual(ajaxStub.args, [['http://test-url']]);
+  });
+});
+
+test('skips the logic if starts with https://', function(assert) {
+  return service.ajax('https://test-url').then(() => {
+    assert.deepEqual(ajaxStub.args, [['https://test-url']]);
+  });
+});
+
 test('returns adapter.ajax response', function(assert) {
-  return service.ajax().then(response => {
+  return service.ajax('test-url').then(response => {
     assert.strictEqual(response, 12);
   });
 });

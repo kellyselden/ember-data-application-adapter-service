@@ -1,6 +1,6 @@
 {
   "name": "ember-data-application-adapter-service",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": " Send AJAX through your adapter without building the URL",
   "directories": {
     "doc": "doc",

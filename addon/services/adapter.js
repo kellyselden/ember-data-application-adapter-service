@@ -3,16 +3,19 @@ import Ember from 'ember';
 const {
   Service,
   get, getWithDefault,
-  inject: { service },
-  computed
+  set,
+  inject: { service }
 } = Ember;
 
 export default Service.extend({
   store: service(),
 
-  _adapter: computed(function() {
-    return get(this, 'store').adapterFor('application');
-  }),
+  init() {
+    this._super(...arguments);
+
+    let adapter = get(this, 'store').adapterFor('application');
+    set(this, '_adapter', adapter);
+  },
 
   _buildUrl(adapter, url) {
     let host = getWithDefault(adapter, 'host', 'http://localhost:4200');

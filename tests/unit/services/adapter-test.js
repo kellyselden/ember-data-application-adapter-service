@@ -7,16 +7,18 @@ const {
 } = Ember;
 
 let service;
+let adapter;
 let adapterForStub, ajaxStub;
 
 moduleFor('service:adapter', 'Unit | Service | adapter', {
   beforeEach() {
     ajaxStub = sinon.stub().returns(Promise.resolve(12));
-    adapterForStub = sinon.stub().returns({
+    adapter = {
       host: 'test-host',
       namespace: 'test-namespace',
       ajax: ajaxStub
-    });
+    };
+    adapterForStub = sinon.stub().returns(adapter);
 
     service = this.subject({
       store: {
@@ -59,5 +61,21 @@ test('skips the logic if starts with https://', function(assert) {
 test('returns adapter.ajax response', function(assert) {
   return service.ajax('test-url').then(response => {
     assert.strictEqual(response, 12);
+  });
+});
+
+test('uses default host if not supplied', function(assert) {
+  delete adapter.host;
+
+  return service.ajax('test-url').then(() => {
+    assert.deepEqual(ajaxStub.args, [['http://localhost:4200/test-namespace/test-url']]);
+  });
+});
+
+test('uses default namespace if not supplied', function(assert) {
+  delete adapter.namespace;
+
+  return service.ajax('test-url').then(() => {
+    assert.deepEqual(ajaxStub.args, [['test-host/test-url']]);
   });
 });

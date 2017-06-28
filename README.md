@@ -1,6 +1,8 @@
 # ember-data-application-adapter-service
+
 [![npm version](https://badge.fury.io/js/ember-data-application-adapter-service.svg)](https://badge.fury.io/js/ember-data-application-adapter-service)
 [![Build Status](https://travis-ci.org/kellyselden/ember-data-application-adapter-service.svg?branch=master)](https://travis-ci.org/kellyselden/ember-data-application-adapter-service)
+![Ember Version](https://embadge.io/v1/badge.svg?start=1.13.0)
 
 Send AJAX through your adapter without building the URL
 
@@ -28,4 +30,10 @@ actions: {
     this.get('adapter').ajax('my-url');
   }
 }
+```
+
+## Installation
+
+```sh
+ember install ember-data-application-adapter-service
 ```

@@ -38,7 +38,7 @@ export default Service.extend({
       url = this._buildUrl(adapter, url);
     }
 
-    let params = Array.prototype.slice.call(arguments).slice(1);
+    let params = Array.prototype.slice.call(arguments, 1);
 
     return adapter.ajax(url, ...params);
   }

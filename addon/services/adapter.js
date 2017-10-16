@@ -8,7 +8,7 @@ const {
 } = Ember;
 
 function buildUrl(adapter, url) {
-  let host = getWithDefault(adapter, 'host', 'http://localhost:4200');
+  let host = getWithDefault(adapter, 'host');
   let namespace = get(adapter, 'namespace');
 
   let parts = [host];
@@ -17,7 +17,12 @@ function buildUrl(adapter, url) {
   }
   parts.push(url);
 
-  return parts.join('/');
+  let combined = parts.join('/');
+  if (!host && combined && combined.charAt(0) !== '/') {
+    combined = '/' + combined;
+  }
+
+  return combined;
 }
 
 export default Service.extend({

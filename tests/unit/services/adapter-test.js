@@ -64,11 +64,11 @@ test('returns adapter.ajax response', function(assert) {
   });
 });
 
-test('uses default host if not supplied', function(assert) {
+test('uses a relative url if host not supplied', function(assert) {
   delete adapter.host;
 
   return service.ajax('test-url').then(() => {
-    assert.deepEqual(ajaxStub.args, [['http://localhost:4200/test-namespace/test-url']]);
+    assert.deepEqual(ajaxStub.args, [['/test-namespace/test-url']]);
   });
 });
 

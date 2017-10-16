@@ -8,7 +8,7 @@ const {
 } = Ember;
 
 function buildUrl(adapter, url) {
-  let host = getWithDefault(adapter, 'host', 'http://localhost:4200');
+  let host = getWithDefault(adapter, 'host', '');
   let namespace = get(adapter, 'namespace');
 
   let parts = [host];

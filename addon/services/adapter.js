@@ -1,11 +1,5 @@
-import Ember from 'ember';
-
-const {
-  Service,
-  get, getWithDefault,
-  set,
-  inject: { service }
-} = Ember;
+import { set, getWithDefault, get } from '@ember/object';
+import Service, { inject as service } from '@ember/service';
 
 function buildUrl(adapter, url) {
   let host = getWithDefault(adapter, 'host', '');

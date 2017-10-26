@@ -1,10 +1,6 @@
-import Ember from 'ember';
+import { Promise } from 'rsvp';
 import { moduleFor, test } from 'ember-qunit';
 import sinon from 'sinon';
-
-const {
-  RSVP: { Promise }
-} = Ember;
 
 let service;
 let adapter;

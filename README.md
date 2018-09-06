@@ -4,7 +4,7 @@ ember-data-application-adapter-service
 [![Greenkeeper badge](https://badges.greenkeeper.io/kellyselden/ember-data-application-adapter-service.svg)](https://greenkeeper.io/)
 [![npm version](https://badge.fury.io/js/ember-data-application-adapter-service.svg)](https://badge.fury.io/js/ember-data-application-adapter-service)
 [![Build Status](https://travis-ci.org/kellyselden/ember-data-application-adapter-service.svg?branch=master)](https://travis-ci.org/kellyselden/ember-data-application-adapter-service)
-[![Ember Version](https://img.shields.io/badge/ember-1.13%2B-brightgreen.svg)](https://www.emberjs.com/)
+[![Ember Version](https://img.shields.io/badge/ember-2.16%2B-brightgreen.svg)](https://www.emberjs.com/)
 
 Send AJAX through your adapter without building the URL
 
